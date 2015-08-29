@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ! Excerpted from "Hello, Android!",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/eband for more book information.
+-->
+<LinearLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent">
+   
+   
+   
+   
+     <TableLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:stretchColumns="1"
+      android:padding="10dip">
+      
+            
+      <TableRow>
+          <TextView  
+                    android:id= "@+id/mytextview"/>
+      </TableRow>
+      
+      
+      
+      
+      
+      <TableRow>
+         <TextView android:text="@string/syncnow_text" />
+         <Spinner android:id="@+id/syncnow_language" />
+      </TableRow>
+      
+      
+      
+      <TableRow>
+          <TextView android:text="@string/all_text" />
+	      <EditText
+	         android:id="@+id/all_field"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1.0"
+	         android:lines="1"
+	         android:inputType="textUri"
+	         android:imeOptions="actionGo" />
+      </TableRow>
+      
+      
+      <TableRow>
+          <TextView android:text="@string/username_text" />
+	      <EditText
+	         android:id="@+id/username_field"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1.0"
+	         android:lines="1"
+	         android:inputType="textUri"
+	         android:imeOptions="actionGo" />
+      </TableRow>
+      
+      
+      
+      
+      <TableRow>
+          <TextView android:text="@string/over_text" />
+	      <EditText
+	         android:id="@+id/over_field"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1.0"
+	         android:lines="1"
+	         android:inputType="textUri"
+	         android:imeOptions="actionGo" />
+      </TableRow>
+      
+      
+   
+      <TableRow>
+          <TextView android:text="@string/email_text" />
+	      <EditText
+	         android:id="@+id/url_field"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1.0"
+	         android:lines="1"
+	         android:inputType="textUri"
+	         android:imeOptions="actionGo" />
+      </TableRow>
+      
+   
+      
+      
+      
+      
+   
+      
+      
+      
+      <TableRow>
+         <TextView android:text="@string/units_text" />
+         <Spinner android:id="@+id/mph_kph_language" />
+      </TableRow>
+      
+      
+      
+      
+      
+      <TableRow>
+          <TextView android:text="@string/rgb_text" />
+	      <EditText
+	         android:id="@+id/rgb_field"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="1.0"
+	         android:lines="1"
+	         android:inputType="textUri"
+	         android:imeOptions="actionGo" />
+      </TableRow>
+      
+      
+      
+     
+      
+      
+      
+      
+   </TableLayout>
+   
+   
+   
+   
+</LinearLayout>

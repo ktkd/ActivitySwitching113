@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 15
+    buildToolsVersion "23.0.0"
+
+    defaultConfig {
+        applicationId "org.wikispeedia.roadrage2"
+        minSdkVersion 15
+        targetSdkVersion 15
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':openCVLibrary249')
+    compile files('libs/android-support-v4.jar')
+    compile files('libs/sjxp-2.2.jar')
+}

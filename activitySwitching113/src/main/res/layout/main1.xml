@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/suzuki"
+    android:orientation="horizontal"
+    android:padding="0dip" >
+
+    <LinearLayout
+    	android:orientation="vertical" 
+    	android:layout_height="wrap_content"
+    	android:layout_width="fill_parent" 
+    	android:layout_gravity="center"
+>
+    
+		
+   						 
+ 		<TableLayout
+  			android:layout_height="wrap_content"
+  			android:layout_width="wrap_content"
+  			android:layout_gravity="center"
+  			android:stretchColumns="*">
+  			<TableRow> 
+				<Button android:textColor= "@color/yellow" android:id="@+id/about_button1"  android:text="@string/about_label1" android:textStyle="bold" android:textSize="40sp"   />
+				<Button android:textColor= "@color/fuchsia" android:id="@+id/about_button2"  android:text="@string/about_label2" android:textStyle="bold" android:textSize="40sp" />
+	    		<Button android:textColor= "@color/red" android:id="@+id/about_button3"  android:text="@string/about_label3" android:textStyle="bold" android:textSize="40sp" />
+			</TableRow>
+			<TableRow>
+	    		<Button android:textColor= "@color/green" android:id="@+id/about_button4"  android:text="@string/about_label4" android:textStyle="bold" android:textSize="40sp" />
+	    		<Button android:textColor= "@color/gray" android:id="@+id/about_button5"  android:text="@string/about_label5" android:textStyle="bold" android:textSize="40sp" />
+	    		<Button android:textColor= "@color/olive" android:id="@+id/about_button6"  android:text="@string/about_label6" android:textStyle="bold" android:textSize="40sp" />
+	   		</TableRow>
+    		<TableRow>
+	    		<Button android:textColor= "@color/purple" android:id="@+id/about_button7"  android:text="@string/about_label7" android:textStyle="bold" android:textSize="40sp" />
+	    		<Button android:textColor= "@color/maroon" android:id="@+id/about_button8"  android:text="@string/about_label8" android:textStyle="bold" android:textSize="40sp" />
+	    		<Button android:textColor= "@color/red" android:id="@+id/about_button9"  android:text="@string/about_label9" android:textStyle="bold" android:textSize="40sp" />	    
+    			</TableRow>
+	   		<TableRow>
+	    		<Button android:textColor= "@color/green" android:id="@+id/about_button10" android:text="@string/about_label10" android:textStyle="bold" android:textSize="40sp"  />	    		
+	    		<Button android:textColor= "@color/blue" android:id="@+id/about_button11" android:text="@string/about_label11" android:textStyle="bold" android:textSize="40sp"  />
+	    		<Button android:textColor= "@color/navy" android:id="@+id/about_button12" android:text="@string/about_label12" android:textStyle="bold" android:textSize="40sp"  />
+    		</TableRow>        		
+		</TableLayout>
+
+ 		
+          	    
+	</LinearLayout>
+</LinearLayout>

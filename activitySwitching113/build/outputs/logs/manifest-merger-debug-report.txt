@@ -1,0 +1,201 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:2:1-124:12
+	package
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:3:5-40
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:5:5-31
+	android:versionCode
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:4:5-29
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:7:5-87:19
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:10:9-41
+	android:allowBackup
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:8:9-35
+	android:icon
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:9:9-45
+activity#org.wikispeedia.roadrage2.Activity1
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:12:9-20:20
+	android:screenOrientation
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:14:13-50
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:15:13-45
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:13:13-37
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:16:13-19:29
+action#android.intent.action.MAIN
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:18:27-74
+activity#org.wikispeedia.roadrage2.Activity2
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:26:9-29:20
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:28:13-45
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:27:13-37
+activity#mzx.chn.lanedetection.LaneDetectActivity
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:33:9-38:20
+	android:screenOrientation
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:36:19-56
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:35:19-51
+	android:configChanges
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:37:19-69
+	android:theme
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:34:13-71
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:33:19-74
+activity#org.wikispeedia.zombiepro.Canvastutorial
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:41:9-45:20
+	android:screenOrientation
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:43:8-45
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:44:17-49
+	android:configChanges
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:42:8-58
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:41:19-74
+activity#es.pymasde.blueterm.DeviceListActivity
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:48:9-51:72
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:49:19-56
+	android:configChanges
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:51:19-69
+	android:theme
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:50:19-62
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:48:19-72
+activity#org.wikispeedia.roadrage2.TermPreferences
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:52:9-51
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:52:19-49
+activity#org.wikispeedia.backseatdriver.Translate
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:57:9-60:20
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:58:10-49
+	android:theme
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:59:10-53
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:57:19-74
+activity#org.wikispeedia.backseatdriver.Deleter
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:64:9-67:20
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:65:10-49
+	android:theme
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:66:10-53
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:64:19-72
+activity#org.wikispeedia.backseatdriver.Settings
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:70:9-75:20
+	android:screenOrientation
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:72:7-44
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:73:10-48
+	android:configChanges
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:71:13-63
+	android:theme
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:74:10-53
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:70:19-73
+activity#es.pymasde.blueterm.BlueTerm
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:79:9-82:20
+	android:label
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:80:10-48
+	android:theme
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:81:10-53
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:79:19-62
+supports-screens
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:89:5-93:51
+	android:largeScreens
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:92:23-50
+	android:smallScreens
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:90:23-50
+	android:normalScreens
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:91:23-51
+	android:resizeable
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:89:23-48
+	android:anyDensity
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:93:23-48
+uses-permission#android.permission.INTERNET
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:96:5-67
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:96:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:97:5-79
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:97:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:101:5-64
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:101:22-62
+uses-feature#android.hardware.camera
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:103:5-84
+	android:required
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:103:58-82
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:103:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:104:5-94
+	android:required
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:104:68-92
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:104:19-67
+uses-feature#android.hardware.camera.front
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:105:5-90
+	android:required
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:105:64-88
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:105:19-63
+uses-feature#android.hardware.camera.front.autofocus
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:106:5-100
+	android:required
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:106:74-98
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:106:19-73
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:109:1-91
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:109:18-72
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:111:1-93
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:111:18-74
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:112:1-93
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:112:18-74
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:113:1-92
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:113:18-73
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:115:6-75
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:115:23-72
+uses-permission#android.permission.BLUETOOTH
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:116:5-68
+	android:name
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:116:22-65
+uses-sdk
+ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:119:5-44
+MERGED from [ActivitySwitching113:openCVLibrary249:unspecified] /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/build/intermediates/exploded-aar/ActivitySwitching113/openCVLibrary249/unspecified/AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml:119:15-41
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
+		INJECTED from /var/www/html/jimws9/ActivitySwitching113/activitySwitching113/src/main/AndroidManifest.xml
