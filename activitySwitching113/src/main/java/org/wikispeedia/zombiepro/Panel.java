@@ -55,11 +55,17 @@ import android.app.AlertDialog;
 import android.app.Activity;
 
 
-
 public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	private CanvasThread canvasthread;
-	
-	static LocationManager lm;
+
+
+
+    static public int crap=0;
+
+
+
+
+    static LocationManager lm;
 
 	Bitmap kangoo25 = null;
 	Bitmap kangoo30 = null;
