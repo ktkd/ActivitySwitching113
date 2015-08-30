@@ -18,6 +18,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -107,6 +108,10 @@ public class Settings extends Activity {
         }       
         
         theoldcontext= this;
+
+
+
+
     }
     
   
@@ -558,9 +563,12 @@ public class Settings extends Activity {
 	
     	      	 	
 	}
-    
-    
-    public static void syncnow() {
+
+
+    static boolean keepgoing=true;
+
+
+    public static void syncnoww() {
     	Log.d("TAGG","SYNC NOW");
 
   
@@ -653,10 +661,12 @@ public class Settings extends Activity {
 		//if(false ) {
 			signsinx= Global.db.getAllofThemSince(todayAsString2);
 		//}
-		
-			
+
 		int isize= 0;
 		isize= signsinx.size();
+        if(isize==0) {
+            keepgoing=false;
+        }
 
 		Global.nSignsNotSynced= isize;
 
@@ -891,7 +901,64 @@ public class Settings extends Activity {
 			
 	}
 
-	
+
+
+
+
+    public static void syncnow() {
+
+        if(Global.mytask2  == null) {
+            Global.mytask2= new AsyncTaskExample2();
+        }
+
+        if(Global.mytask2.getStatus() == AsyncTask.Status.RUNNING){
+            Log.d("TAGG","My AsyncTask is currently doing work in doInBackground");
+        } else {
+
+            Global.mytask2= null;
+            Global.mytask2= new AsyncTaskExample2();
+
+            Log.d("TAGG","before mytask2 execute");
+            Global.mytask2.execute();
+            Log.d("TAGG", "after mytask2 execute");
+
+        }
+
+    }
+
+
+
+
+
+    public static class AsyncTaskExample2 extends AsyncTask<Void, Integer, String> {
+		protected void onPreExecute(){
+			Log.d("TAGG", "On preExceute...");
+		}
+		protected String doInBackground(Void... arg0) {
+            Log.d("TAGG","On doInBackground...");
+
+
+            keepgoing=true;
+            int i=28;
+
+            while(keepgoing) {
+
+                publishProgress(i++);
+
+                syncnoww();
+            }
+
+
+			return "You are at PostExecute2";
+		}
+		protected void onProgressUpdate(Integer...a){
+			Log.d("TAGG","You are in progress update ... " + a[0]);
+		}
+		protected void onPostExecute(String result) {
+			Log.d("TAGG",result);
+		}
+	}
+
 	
 }
 

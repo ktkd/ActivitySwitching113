@@ -296,7 +296,10 @@ public class Activity1 extends Activity {
 		  StrictMode.setThreadPolicy(policy);
 	  }
 
-        
+
+
+
+
 }
   
   

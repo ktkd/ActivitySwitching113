@@ -22,6 +22,7 @@ import org.wikispeedia.zombiepro.Canvastutorial;
 
 import android.content.Context;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import niceandroid.net.androidsqlite.DatabaseHandler;
@@ -205,7 +206,12 @@ public class Global {
 		
 		public static int nSignsNotSynced;
 		public static int nSignsNotSynced_wentoutlasttime;
-		
+
+
+		public static Settings.AsyncTaskExample2 mytask2;
+
+
+
 }
 
 	
