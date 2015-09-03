@@ -55,17 +55,11 @@ import android.app.AlertDialog;
 import android.app.Activity;
 
 
+
 public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	private CanvasThread canvasthread;
 
-
-
-    static public int crap=0;
-
-
-
-
-    static LocationManager lm;
+	static LocationManager lm;
 
 	Bitmap kangoo25 = null;
 	Bitmap kangoo30 = null;
@@ -803,7 +797,7 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 			
 			if(Global.thecontactListindex > -1) {
 			  
-   			   	   Global.db.deleteSignAsync(Global.visible_contact);   
+   			   	   Global.db.deleteSignAsync(Global.visible_contact);
    			   	   
    			   	   Global.thecontactList.remove(Global.thecontactListindex);
    			    
@@ -868,14 +862,16 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 		Global.tapped= false;
 		
     	if(Global.tappedSignFound >= 0) {
-    		
+
+            Global.manualdelete= true;
+
     		int i = Global.tappedSignFound;
     		Global.deleter_contact = Global.thecontactList.get(i);
     		
     		Global.tappedSignFound=-1;
     		
     		Global.panelthis.startActivity(new Intent(Global.panelthis, Deleter.class));
-    		
+
     	   
     	} else {
     		Log.d("TAGG", "no sign tapped, so do SETTINGS");

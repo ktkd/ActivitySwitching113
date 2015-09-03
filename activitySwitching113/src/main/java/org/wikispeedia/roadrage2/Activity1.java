@@ -58,6 +58,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.concurrent.*;
+
+
+
 class AsyncTaskExample1 extends AsyncTask<Void, Integer, String>{   
 	   protected void onPreExecute(){    
 	    Log.d("Asyntask","On preExceute...");
@@ -151,7 +155,18 @@ public class Activity1 extends Activity {
     final Button switchact2= (Button)findViewById(R.id.btn2);
     final Button switchact3= (Button)findViewById(R.id.btn3);
     final Button switchact4= (Button)findViewById(R.id.btn4);
-	 
+
+
+
+	  ConcurrentLinkedQueueExample clq = new ConcurrentLinkedQueueExample();
+
+
+	  String[] arr = new String[0];
+
+	  clq.main(arr);
+
+
+
     mythis = this;
     
 	 
@@ -295,7 +310,6 @@ public class Activity1 extends Activity {
 		  StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		  StrictMode.setThreadPolicy(policy);
 	  }
-
 
 
 

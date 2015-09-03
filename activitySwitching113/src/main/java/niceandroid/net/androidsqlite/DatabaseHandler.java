@@ -262,7 +262,7 @@ private void copyDataBase() throws IOException {
 		//todo redundant remove sometime: This is also done in getJourneys().
 		//change 35.12345678 to 35.123  so its easier to sort
 		String smalllat= new DecimalFormat("##.###").format( contact.lat);
-		String smalllng= new DecimalFormat("##.###").format( contact.lng);
+		String smalllng= new DecimalFormat("##.###").format(contact.lng);
 						
 		ContentValues values = new ContentValues();
 		values.put(KEY_LAT, smalllat);
@@ -364,9 +364,18 @@ private void copyDataBase() throws IOException {
 	 */
 
 
-	
-	
-	public // Adding new contact
+
+
+    public // Adding new contact quickly (Async)
+    void addContactAsync(Signs contact) {
+
+        Global.signs_s.add(contact);
+
+    }
+
+
+
+    public // Adding new contact
 	void addContact(Signs contact) {
 		
 		String mydate;  
@@ -419,7 +428,10 @@ private void copyDataBase() throws IOException {
 	}
 	
 	public void deleteSignAsync(Signs contact) {
-		
+
+
+		Global.signs_d.add(contact);
+
 	}
 
 	// Deleting single contact

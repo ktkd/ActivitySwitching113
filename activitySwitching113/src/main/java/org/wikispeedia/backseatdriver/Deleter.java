@@ -61,26 +61,37 @@ public class Deleter extends Activity implements OnClickListener {
 	   public void onCreate(Bundle savedInstanceState) { 
 	      super.onCreate(savedInstanceState);
 	      //setContentView(R.layout.main3);
-	      
-	      if(Global.andyDelete) {
-	    	  	      
-	  		
-	      } else {
 
-		      	Signs contact = Global.deleter_contact;
-		      	      
-	  	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	  	    
-		  	    // set title
-		  	    builder.setTitle("(C) " + contact.tag);
-					
-		  	    builder.setMessage("Delete?").setPositiveButton("Yes", dialogClickListener)
-		  	        .setNegativeButton("No", dialogClickListener).show();
-		  	    
-		  		Log.d("TAGG","TaggedSignFound1");
-	      }
-	      
-	     
+
+		   if(Global.manualdelete) {
+
+			   Global.manualdelete=false;
+
+			   Signs contact = Global.deleter_contact;
+			   AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			   // set title
+			   builder.setTitle("(C) " + contact.tag);
+			   builder.setMessage("Delete?").setPositiveButton("Yes", dialogClickListener)
+					   .setNegativeButton("No", dialogClickListener).show();
+			   Log.d("TAGG","TaggedSignFound1");
+
+		   } else {
+
+			   if (Global.andyDelete) {
+
+
+			   } else {
+
+				   Signs contact = Global.deleter_contact;
+				   AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				   // set title
+				   builder.setTitle("(C) " + contact.tag);
+				   builder.setMessage("Delete?").setPositiveButton("Yes", dialogClickListener)
+						   .setNegativeButton("No", dialogClickListener).show();
+				   Log.d("TAGG", "TaggedSignFound1");
+			   }
+
+		   }
 
 	      
 	   }

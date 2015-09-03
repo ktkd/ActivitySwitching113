@@ -33,6 +33,13 @@ public class Global {
 
 
 
+	public static List<Signs> signs_s = new ArrayList<Signs>();
+
+	public static List<Signs> signs_d = new ArrayList<Signs>();
+
+
+
+
 	public static boolean test=  false;
 
 
@@ -40,10 +47,10 @@ public class Global {
 	public static boolean andygrid= false;
 	public static boolean andyDelete= false;
 	public static boolean andyDoubleDeleter= false;
+    public static boolean manualdelete= false;
 
 
-
-	public static String getGmtDateAsString() {	
+    public static String getGmtDateAsString() {
 		Date gmt= new Date();
 		String mydate;
 		String format = "yyyy-MM-dd HH:mm:ss";
@@ -140,7 +147,7 @@ public class Global {
 
 		public static SpeedlimitManager4 slm;
 		
-		public static boolean thecontactlistbusy;
+		public static boolean thecontactlistbusy = false;
 
 		private static Float nelon;
 
@@ -194,13 +201,30 @@ public class Global {
 			Global.thecontactlistbusy=true;
 
 			Global.thecontactList= Global.db.getBox(swlat,swlon,nelat,nelon);
-			Log.d("TAGG","After getBox, Lat,Lon= " + Global.myLatitudeString + " "  + Global.myLongitudeString);    
-			
-			Global.thecontactlistbusy=false;
-			
-			
-			
-		}
+			Log.d("TAGG","After getBox, Lat,Lon= " + Global.myLatitudeString + " "  + Global.myLongitudeString);
+
+
+
+			//put this in dobox because i am lazy
+            for (int ix=0; ix < Global.signs_d.size() ; ix++) {
+                Signs sign = Global.signs_d.get(ix);
+                Global.db.deleteSign(sign);
+            }
+            Global.signs_d.clear();
+
+            for (int ix=0; ix < Global.signs_s.size() ; ix++) {
+                Signs sign = Global.signs_s.get(ix);
+                Global.db.addContact(sign);
+            }
+            Global.signs_s.clear();
+
+
+            Global.thecontactlistbusy=false;
+
+
+        }
+
+
 
 		public static LocationManager lm;
 		
