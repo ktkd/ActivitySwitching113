@@ -21,7 +21,8 @@ public class Signs {
 	
 	public String tag;
 	public Boolean web_local= false;
-	
+
+	public int mph_truck;
 	
 	
 }

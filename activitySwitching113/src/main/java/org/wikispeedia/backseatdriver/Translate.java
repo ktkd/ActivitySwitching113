@@ -246,6 +246,7 @@ public class Translate extends Activity implements OnClickListener {
     	  contact.cog= Global.myCog;
     	  if(Global.mph_kph) {
     		  contact.mph=65;
+              contact.mph_truck= 55;
     	  } else {
     		  contact.kph= 110;
     	  }
@@ -330,20 +331,33 @@ public class Translate extends Activity implements OnClickListener {
    /** Get a handle to all user interface elements */
    private void findViews() {                          
       
-	      if(Global.mph_kph == false) {
-		      ((Button) findViewById(R.id.about_button1)).setText("30 Kph");
-		      ((Button) findViewById(R.id.about_button2)).setText("40 Kph");
-		      ((Button) findViewById(R.id.about_button3)).setText("50 Kph");
-		      ((Button) findViewById(R.id.about_button4)).setText("60 Kph");
-		      ((Button) findViewById(R.id.about_button5)).setText("70 Kph");
-		      ((Button) findViewById(R.id.about_button6)).setText("80 Kph");
-		      ((Button) findViewById(R.id.about_button7)).setText("90 Kph");
-		      ((Button) findViewById(R.id.about_button8)).setText("100 Kph");
-		      ((Button) findViewById(R.id.about_button9)).setText("110 Kph");
-		      ((Button) findViewById(R.id.about_button10)).setText("120 Kph");
-		      ((Button) findViewById(R.id.about_button11)).setText("130 Kph");
-		      ((Button) findViewById(R.id.about_button12)).setText("140 Kph");	      
-	      }
+	      if(Global.mph_kph == true) {
+		      ((Button) findViewById(R.id.about_button1)).setText("25");
+		      ((Button) findViewById(R.id.about_button2)).setText("30");
+		      ((Button) findViewById(R.id.about_button3)).setText("35");
+		      ((Button) findViewById(R.id.about_button4)).setText("40");
+		      ((Button) findViewById(R.id.about_button5)).setText("45");
+		      ((Button) findViewById(R.id.about_button6)).setText("50");
+		      ((Button) findViewById(R.id.about_button7)).setText("55");
+		      ((Button) findViewById(R.id.about_button8)).setText("60");
+		      ((Button) findViewById(R.id.about_button9)).setText("65T55");
+		      ((Button) findViewById(R.id.about_button10)).setText("70");
+		      ((Button) findViewById(R.id.about_button11)).setText("75");
+		      ((Button) findViewById(R.id.about_button12)).setText("80");
+	      } else {
+			  ((Button) findViewById(R.id.about_button1)).setText("30 Kph");
+			  ((Button) findViewById(R.id.about_button2)).setText("40 Kph");
+			  ((Button) findViewById(R.id.about_button3)).setText("50 Kph");
+			  ((Button) findViewById(R.id.about_button4)).setText("60 Kph");
+			  ((Button) findViewById(R.id.about_button5)).setText("70 Kph");
+			  ((Button) findViewById(R.id.about_button6)).setText("80 Kph");
+			  ((Button) findViewById(R.id.about_button7)).setText("90 Kph");
+			  ((Button) findViewById(R.id.about_button8)).setText("100 Kph");
+			  ((Button) findViewById(R.id.about_button9)).setText("110 Kph");
+			  ((Button) findViewById(R.id.about_button10)).setText("120 Kph");
+			  ((Button) findViewById(R.id.about_button11)).setText("130 Kph");
+			  ((Button) findViewById(R.id.about_button12)).setText("140 Kph");
+		  }
 	   
 	      /*
 	      // Set up click listeners for all the buttons

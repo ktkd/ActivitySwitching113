@@ -12,7 +12,7 @@
     	android:layout_width="fill_parent" 
     	android:layout_gravity="center"
 >
-    
+
 		
    						 
  		<TableLayout
@@ -33,7 +33,7 @@
     		<TableRow>
 	    		<Button android:textColor= "@color/purple" android:id="@+id/about_button7"  android:text="@string/about_label7" android:textStyle="bold" android:textSize="40sp" />
 	    		<Button android:textColor= "@color/maroon" android:id="@+id/about_button8"  android:text="@string/about_label8" android:textStyle="bold" android:textSize="40sp" />
-	    		<Button android:textColor= "@color/red" android:id="@+id/about_button9"  android:text="@string/about_label9" android:textStyle="bold" android:textSize="40sp" />	    
+	    		<Button android:textColor= "@color/red" android:id="@+id/about_button9"  android:text="65T55" android:textStyle="bold" android:textSize="40sp" />
     			</TableRow>
 	   		<TableRow>
 	    		<Button android:textColor= "@color/green" android:id="@+id/about_button10" android:text="@string/about_label10" android:textStyle="bold" android:textSize="40sp"  />	    		

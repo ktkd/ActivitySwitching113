@@ -26,6 +26,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import niceandroid.net.androidsqlite.DatabaseHandler;
+import niceandroid.net.androidsqlite.DatabaseHandler_east;
 
 
 public class Global {
@@ -75,6 +76,7 @@ public class Global {
 		}
 	    return gmt;
 	}
+
 
 		public static DatabaseHandler db = null;
 		public static List<Signs> thecontactList=null;

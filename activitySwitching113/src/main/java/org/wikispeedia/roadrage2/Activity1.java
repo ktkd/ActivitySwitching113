@@ -6,6 +6,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import niceandroid.net.androidsqlite.DatabaseHandler;
+import niceandroid.net.androidsqlite.DatabaseHandler_east;
 
 import org.wikispeedia.roadrage2.R;
 import org.wikispeedia.speedlimit.Signs;
@@ -266,7 +267,8 @@ public class Activity1 extends Activity {
     	
     	if(Global.test) {    	 
 
-        	
+			Signs sign= new Signs();
+        	Global.db.addContact(sign);
         	
     	}
     	

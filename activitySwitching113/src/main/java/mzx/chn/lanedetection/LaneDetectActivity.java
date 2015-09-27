@@ -12,7 +12,6 @@ import java.io.InputStream;
 
 import org.wikispeedia.roadrage2.R;
 
-import niceandroid.net.androidsqlite.DatabaseHandler;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
