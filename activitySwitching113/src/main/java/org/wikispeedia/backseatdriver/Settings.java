@@ -655,15 +655,21 @@ public class Settings extends Activity {
 		
 		
 		List<Signs> signsinx = new ArrayList<Signs>();
-		
+
+        Log.d("TAGG","before getallofthem big query...");
 		
 		//trick to reset date 
 		//if(false ) {
 			signsinx= Global.db.getAllofThemSince(todayAsString2);
 		//}
 
+
 		int isize= 0;
 		isize= signsinx.size();
+
+        Log.d("TAGG","isize=" + Integer.toString(isize));
+
+
         if(isize==0) {
             keepgoing=false;
         }

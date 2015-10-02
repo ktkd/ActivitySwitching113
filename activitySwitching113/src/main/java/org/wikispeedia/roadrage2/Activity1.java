@@ -2,6 +2,7 @@ package org.wikispeedia.roadrage2;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -265,11 +266,26 @@ public class Activity1 extends Activity {
     
     	
     	
-    	if(Global.test) {    	 
+    	if(Global.test) {
+
+
+
 
 			Signs sign= new Signs();
-        	Global.db.addContact(sign);
-        	
+			sign.mph=65;
+			sign.mph_truck=55;
+			sign.lat=35.00001;
+			sign.lng=-100.00001;
+			Global.db.addContact(sign);
+
+
+			List<Signs> whoknows = Global.db.getBox(35.0f, -100.00002f, 35.00002f, -100.0000f);
+
+
+            Log.d("TAGG","n= "  );
+
+
+			
     	}
     	
 	
@@ -312,7 +328,6 @@ public class Activity1 extends Activity {
 		  StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		  StrictMode.setThreadPolicy(policy);
 	  }
-
 
 
 

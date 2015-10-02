@@ -70,6 +70,7 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	Bitmap kangoo55 = null;
 	Bitmap kangoo60 = null;
 	Bitmap kangoo65 = null;
+	Bitmap kangoo65t55= null;
 	Bitmap kangoo70 = null;
 	Bitmap kangoo75 = null;
 	Bitmap kangoo80 = null;
@@ -157,6 +158,8 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 				R.drawable.kangoo60);
 		kangoo65 = BitmapFactory.decodeResource(getResources(),
 				R.drawable.kangoo65);
+		kangoo65t55 = BitmapFactory.decodeResource(getResources(),
+				R.drawable.kangoo65t55);
 		kangoo70 = BitmapFactory.decodeResource(getResources(),
 				R.drawable.kangoo70);
 		kangoo75 = BitmapFactory.decodeResource(getResources(),
@@ -517,10 +520,11 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 		Integer result=0;
 		Boolean showcog=false;
 		Boolean showdistance=false;
-		
-		
 
-		//Log.d("TAGG","n=" + Integer.toString(n));
+
+		Global.duplist.clear();
+
+
 		
 		nDoubles= 0;
 		int oldmph= 0;
@@ -640,7 +644,7 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 		   
 		   
 		    
-		   int speed= (Global.mph_kph)?val.mph:val.kph;	   
+		   int speed= (Global.mph_kph)?val.mph:val.kph;
 	       Bitmap bp;
 	       switch (speed) {
 	            case 25:  bp = kangoo25;
@@ -659,7 +663,7 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	                     break;
 	            case 60:  bp = kangoo60;
 	                     break;
-	            case 65:  bp = kangoo65;
+	            case 65:  if(val.mph_truck>0){bp = kangoo65t55;} else {bp = kangoo65;}
 	                     break;
 	            case 70: bp = kangoo70;
 	                     break;
@@ -731,20 +735,10 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 
 		    	   //if multi signs, delete newer ones
 		    	   if(Global.andyDoubleDeleter) {
-		    		   
-		    		   thisdate= getdate(val);
-		    		   
-			    	   if(val.mph == oldmph) {		    		   
-			    		   			    		   
-			    		   if(thisdate.compareTo(lastdate)>0){
-					    		//System.out.println("left is after right");  		
-					    		Global.visible_contact= val;
-				    			Global.thecontactListindex= index;	      					   				    		
-					    	}  
-			    	  	
-			    	   }
-			    	   oldmph= val.mph;
-			    	   lastdate= thisdate;
+
+
+					   Global.duplist.add(val);
+
 		    	   }  
 		    	   
 		    	   
@@ -814,14 +808,61 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
         	stuff();    	  
     	   Global.tapped=false;
         }
-       
-		
+
+		process_dups();
+
+
 		//Global.tapped=false;	//tap not found, so keep it from hanging
 		
 		busy=false;
+
 		
 	}
-	 
+
+
+	void process_dups() {
+		int i=10;
+		Boolean keepgoing=true;
+		while(keepgoing) {
+			process_dups1();
+			i--;
+			if(i<1) {
+				keepgoing=false;
+			}
+		}
+	}
+
+	void process_dups1() {
+
+		int n = Global.duplist.size();
+		if(n<=1) {
+			return;
+		}
+		if (n > 1) {
+
+			//f
+			Date oldest = getdate(Global.duplist.get(0));
+
+			for (int i = 1; i < n; i++) {
+                Signs sign=  Global.duplist.get(i);
+				Date thisdate = getdate(sign);
+
+				if (thisdate.compareTo(oldest) > 0) {
+					//System.out.println("left is after right");
+					Global.duplist.remove(i);
+
+                    //kill it in big db
+                    Global.db.deleteSignAsync(sign);
+					return;
+				} else {
+					oldest = thisdate;
+				}
+			}
+
+
+		}
+	}
+
 
 
 	Date getdate(Signs val) {

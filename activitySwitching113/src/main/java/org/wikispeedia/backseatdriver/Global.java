@@ -38,7 +38,7 @@ public class Global {
 
 	public static List<Signs> signs_d = new ArrayList<Signs>();
 
-
+	public static List<Signs> duplist= new ArrayList<Signs>();
 
 
 	public static boolean test=  false;
@@ -47,7 +47,7 @@ public class Global {
 
 	public static boolean andygrid= false;
 	public static boolean andyDelete= false;
-	public static boolean andyDoubleDeleter= false;
+	public static boolean andyDoubleDeleter= true;
     public static boolean manualdelete= false;
 
 

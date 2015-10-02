@@ -59,6 +59,8 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
     private static final String DB_NAME = "west";
 
 
+
+
     // Contacts table name
     private static final String TABLE_CONTACTS = "contacts";
     private static final String TABLE_JOURNEY = "journey";
@@ -79,6 +81,7 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
     private static final String KEY_SUTC = "sutc";
     private static final String KEY_DUTC = "dutc";
     private static final String KEY_TAG = "tag";
+    private static final String KEY_MPH_TRUCK = "mph_truck";
     private static final String KEY_WEB_LOCAL= "web_local";
 
     //different table
@@ -201,11 +204,12 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
             + KEY_COG + " INTEGER,"
             + KEY_MPH + " INTEGER,"
             + KEY_DELETEDON   + " TEXT,"
-            + KEY_SUBMITTEDON + " TEXT, "
+            + KEY_SUBMITTEDON + " TEXT,"
             + KEY_KPH + " INTEGER, "
             + KEY_SUTC + " TEXT,"
-            + KEY_DUTC + " TEXT "
-            + KEY_TAG + " TEXT "
+            + KEY_DUTC + " TEXT,"
+            + KEY_TAG + " TEXT,"
+            + KEY_MPH_TRUCK + " INTEGER,"
             + KEY_WEB_LOCAL + " INTEGER "
             + ")";
 
@@ -391,6 +395,7 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
         values.put(KEY_MPH, contact.mph);
         values.put(KEY_KPH, contact.kph);
         values.put(KEY_TAG, contact.tag);
+        values.put(KEY_MPH_TRUCK, contact.mph_truck);
 
         int web_local;
         if(contact.web_local) {
@@ -613,6 +618,7 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
                 contact.dutc=  cursor.getString(8);
 
                 contact.tag= cursor.getString(9);
+                contact.mph_truck= cursor.getInt(10);
 
                 String dutc=contact.dutc;
                 String deletedOn=contact.deletedOn;
@@ -679,6 +685,7 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
                 contact.sutc=  cursor.getString(7);
                 contact.dutc=  cursor.getString(8);
 
+                contact.mph_truck= cursor.getInt(10);
                 //if(contact.deletedOn!=null) {
                 //	Log.d("TAGG","dont add to list");
                 //} else {
@@ -709,11 +716,11 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
 
 
         String selectQuery=
-                "SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,web_local, " +
+                "SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck,web_local, " +
                         "sutc as mydate from contacts " +
                         "where sutc>" + thedate + " " +
                         "union all " +
-                        "SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,web_local, " +
+                        "SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck,web_local, " +
                         "dutc as mydate from contacts " +
                         "where dutc>" + thedate + " " +
                         "order by mydate " +  " " +
@@ -751,7 +758,9 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
                 contact.sutc=  cursor.getString(7);
                 contact.dutc=  cursor.getString(8);
 
-                int val = cursor.getInt(10);			//9 is tag which is unused...
+                contact.mph_truck= cursor.getInt(10);
+
+                int val = cursor.getInt(11);			//9 is tag which is unused...
                 Boolean bval= (val>0)?true:false;
                 contact.web_local= bval;
                 //Adding contact to list
@@ -836,6 +845,7 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
                 contact.sutc=  cursor.getString(7);
                 contact.dutc=  cursor.getString(8);
 
+                contact.mph_truck= cursor.getInt(10);
 
                 //Adding contact to list
                 contactList.add(contact);
@@ -900,6 +910,7 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
         values.put(KEY_MPH,   Integer.toString(contact.mph));
         values.put(KEY_KPH,   Integer.toString(contact.kph));
         values.put(KEY_TAG,   contact.tag);
+        values.put(KEY_MPH_TRUCK, Integer.toString(contact.mph_truck));
 
         // updating row
         return db.update(TABLE_CONTACTS, values, KEY_LAT + " = ?",
@@ -937,11 +948,11 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
         }
 
 
-        db.execSQL("CREATE TABLE rnd_killer( lat REAL,lon REAL,cog INTEGER,mph INTEGER,deletedOn TEXT,submittedOn TEXT, kph INTEGER, sutc TEXT, dutc TEXT, tag TEXT )");
+        db.execSQL("CREATE TABLE rnd_killer( lat REAL,lon REAL,cog INTEGER,mph INTEGER,deletedOn TEXT,submittedOn TEXT, kph INTEGER, sutc TEXT, dutc TEXT, tag TEXT, mph_truck INTEGER )");
         //db.execSQL("CREATE INDEX indx on rnd_killer (lat,lon)");
 
 
-        db.execSQL("INSERT INTO rnd_killer  (lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag) SELECT distinct round(lat,8),round(lon,8),cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag FROM contacts");
+        db.execSQL("INSERT INTO rnd_killer  (lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck) SELECT distinct round(lat,8),round(lon,8),cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck FROM contacts");
 
 
         try {
@@ -1021,9 +1032,9 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
         catch(Exception e) {
         }
 
-        db.execSQL("CREATE TABLE web_set( lat REAL,lon REAL,cog INTEGER,mph INTEGER,deletedOn TEXT,submittedOn TEXT, kph INTEGER, sutc TEXT, dutc TEXT, tag TEXT )");
+        db.execSQL("CREATE TABLE web_set( lat REAL,lon REAL,cog INTEGER,mph INTEGER,deletedOn TEXT,submittedOn TEXT, kph INTEGER, sutc TEXT, dutc TEXT, tag TEXT, mph_truck INTEGER )");
 
-        db.execSQL("INSERT INTO web_set  (lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag) SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag FROM contacts where web_local=true");
+        db.execSQL("INSERT INTO web_set  (lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck) SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck FROM contacts where web_local=true");
 
         try {
             Thread.sleep(1000);
@@ -1040,9 +1051,9 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
         catch(Exception e) {
         }
 
-        db.execSQL("CREATE TABLE local_set( lat REAL,lon REAL,cog INTEGER,mph INTEGER,deletedOn TEXT,submittedOn TEXT, kph INTEGER, sutc TEXT, dutc TEXT, tag TEXT )");
+        db.execSQL("CREATE TABLE local_set( lat REAL,lon REAL,cog INTEGER,mph INTEGER,deletedOn TEXT,submittedOn TEXT, kph INTEGER, sutc TEXT, dutc TEXT, tag TEXT , mph_truck INTEGER )");
 
-        db.execSQL("INSERT INTO local_set  (lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag) SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag FROM contacts where web_local=false and ");
+        db.execSQL("INSERT INTO local_set  (lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck) SELECT lat,lon,cog,mph,deletedOn,submittedOn,kph,sutc,dutc,tag,mph_truck FROM contacts where web_local=false and ");
 
         try {
             Thread.sleep(1000);
