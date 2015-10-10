@@ -965,7 +965,42 @@ public class Settings extends Activity {
 		}
 	}
 
-	
+
+
+    public static class AsyncTaskExample3 extends AsyncTask<Void, Integer, String> {
+        protected void onPreExecute(){
+            Log.d("TAGG", "On preExceute3...");
+        }
+        protected String doInBackground(Void... arg0) {
+            Log.d("TAGG","On doInBackground3...");
+
+
+            for (int ix=0; ix < Global.signs_d.size() ; ix++) {
+                Signs sign = Global.signs_d.get(ix);
+                Global.db.deleteSign(sign);
+            }
+            Global.signs_d.clear();
+
+            for (int ix=0; ix < Global.signs_s.size() ; ix++) {
+                Signs sign = Global.signs_s.get(ix);
+                Global.db.addContact(sign);
+            }
+            Global.signs_s.clear();
+
+
+
+            return "You are at PostExecute3";
+        }
+        protected void onProgressUpdate(Integer...a){
+            Log.d("TAGG","You are in progress update3 ... " + a[0]);
+        }
+        protected void onPostExecute(String result) {
+            Log.d("TAGG",result);
+        }
+    }
+
+
+
 }
 
 

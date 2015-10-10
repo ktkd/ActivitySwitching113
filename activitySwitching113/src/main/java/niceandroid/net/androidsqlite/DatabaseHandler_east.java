@@ -19,6 +19,7 @@ package niceandroid.net.androidsqlite;
         import org.wikispeedia.backseatdriver.AppPreferences;
         import org.wikispeedia.backseatdriver.Global;
         import org.wikispeedia.backseatdriver.Settings;
+        import org.wikispeedia.backseatdriver.Settings.AsyncTaskExample3;
         import org.wikispeedia.speedlimit.Box;
         import org.wikispeedia.speedlimit.Signs;
 
@@ -30,6 +31,7 @@ package niceandroid.net.androidsqlite;
         import android.database.sqlite.SQLiteDatabase;
         import android.database.sqlite.SQLiteException;
         import android.database.sqlite.SQLiteOpenHelper;
+        import android.os.AsyncTask;
         import android.text.format.DateFormat;
         import android.util.Log;
 
@@ -365,11 +367,33 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
 
 
 
+    void get_mytask3_running() {
+
+        if (Global.mytask3 == null) {
+            Global.mytask3 = new AsyncTaskExample3();
+        }
+
+        if (Global.mytask3.getStatus() == AsyncTask.Status.RUNNING) {
+            Log.d("TAGG", "My AsyncTask3 is currently doing work in doInBackground");
+        } else {
+
+            Global.mytask3 = null;
+            Global.mytask3 = new AsyncTaskExample3();
+
+            Log.d("TAGG", "before mytask3 execute");
+            Global.mytask3.execute();
+            Log.d("TAGG", "after mytask3 execute");
+        }
+
+    }
+
 
     public // Adding new contact quickly (Async)
     void addContactAsync(Signs contact) {
 
         Global.signs_s.add(contact);
+
+        get_mytask3_running();
 
     }
 
@@ -426,6 +450,9 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
         //Inserting Row
         db.insert(TABLE_CONTACTS, null, values);
         db.close(); // Closing database connection
+
+
+        Log.d("TAGG","after db.insert with speed=" + Integer.toString(contact.mph));
     }
 
     public void deleteSignAsync(Signs contact) {
@@ -471,6 +498,9 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
 
 
         db.close();
+
+        Log.d("TAGG","after deleting db.close with mph=" + Integer.toString(contact.mph));
+
     }
 
 

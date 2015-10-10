@@ -207,18 +207,6 @@ public class Global {
 
 
 
-			//put this in dobox because i am lazy
-            for (int ix=0; ix < Global.signs_d.size() ; ix++) {
-                Signs sign = Global.signs_d.get(ix);
-                Global.db.deleteSign(sign);
-            }
-            Global.signs_d.clear();
-
-            for (int ix=0; ix < Global.signs_s.size() ; ix++) {
-                Signs sign = Global.signs_s.get(ix);
-                Global.db.addContact(sign);
-            }
-            Global.signs_s.clear();
 
 
             Global.thecontactlistbusy=false;
@@ -236,6 +224,7 @@ public class Global {
 
 		public static Settings.AsyncTaskExample2 mytask2;
 
+		public static Settings.AsyncTaskExample3 mytask3;
 
 
 }

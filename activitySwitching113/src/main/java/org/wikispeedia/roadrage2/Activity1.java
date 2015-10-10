@@ -160,12 +160,9 @@ public class Activity1 extends Activity {
 
 
 
-	  ConcurrentLinkedQueueExample clq = new ConcurrentLinkedQueueExample();
-
-
-	  String[] arr = new String[0];
-
-	  clq.main(arr);
+	  //ConcurrentLinkedQueueExample clq = new ConcurrentLinkedQueueExample();
+	  //String[] arr = new String[0];
+	  //clq.main(arr);
 
 
 
@@ -302,7 +299,7 @@ public class Activity1 extends Activity {
 	    //auto start system to help Andy
 	    mycontext= this;
 	    
-	    Toast.makeText(this, "autostart andydelete in 1 minute", 200000).show();
+	    Toast.makeText(this, "autostart andydelete in 1 minute", Toast.LENGTH_LONG).show();
 	    Log.d("TAGG","autostart andydelete in 5 minutes");
         mmTimer = new Timer("andydeletetimer");
 
