@@ -791,7 +791,7 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 			
 			if(Global.thecontactListindex > -1) {
 			  
-   			   	   Global.db.deleteSignAsync(Global.visible_contact);
+   			   	   Global.db.deleteSign(Global.visible_contact);
    			   	   
    			   	   Global.thecontactList.remove(Global.thecontactListindex);
    			    
@@ -852,7 +852,7 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 					Global.duplist.remove(i);
 
                     //kill it in big db
-                    Global.db.deleteSignAsync(sign);
+                    Global.db.deleteSign(sign);
 					return;
 				} else {
 					oldest = thisdate;

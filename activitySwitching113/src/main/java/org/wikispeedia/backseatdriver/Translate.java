@@ -132,7 +132,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 30;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -147,7 +147,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 40;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -161,7 +161,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 50;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -175,7 +175,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 60;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -190,7 +190,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 70;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -204,7 +204,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 80;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -219,7 +219,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 90;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -234,7 +234,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 100;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -250,7 +250,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 110;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -265,7 +265,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 120;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -279,7 +279,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 130;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;
@@ -293,7 +293,7 @@ public class Translate extends Activity implements OnClickListener {
     	  } else {
     		  contact.kph= 140;
     	  }
-    	  Global.db.addContactAsync(contact);
+    	  Global.db.addContact(contact);
     	  if(!andygrid) finish();
     	  
           break;

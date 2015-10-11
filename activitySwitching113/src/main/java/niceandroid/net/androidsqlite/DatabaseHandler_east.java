@@ -19,7 +19,7 @@ package niceandroid.net.androidsqlite;
         import org.wikispeedia.backseatdriver.AppPreferences;
         import org.wikispeedia.backseatdriver.Global;
         import org.wikispeedia.backseatdriver.Settings;
-        import org.wikispeedia.backseatdriver.Settings.AsyncTaskExample3;
+
         import org.wikispeedia.speedlimit.Box;
         import org.wikispeedia.speedlimit.Signs;
 
@@ -50,8 +50,8 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
     //private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static String DB_PATH = "/mnt/sdcard/";
-    //private static String DB_PATH= "/mnt/extSdCard/";
+    //private static String DB_PATH = "/mnt/sdcard/";
+    private static String DB_PATH= "/mnt/extSdCard/";   //SAMSUNG phone
     //private static String DB_PATH = "/data/data/org.wikispeedia.roadrage2/databases/";
 
 
@@ -367,35 +367,6 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
 
 
 
-    void get_mytask3_running() {
-
-        if (Global.mytask3 == null) {
-            Global.mytask3 = new AsyncTaskExample3();
-        }
-
-        if (Global.mytask3.getStatus() == AsyncTask.Status.RUNNING) {
-            Log.d("TAGG", "My AsyncTask3 is currently doing work in doInBackground");
-        } else {
-
-            Global.mytask3 = null;
-            Global.mytask3 = new AsyncTaskExample3();
-
-            Log.d("TAGG", "before mytask3 execute");
-            Global.mytask3.execute();
-            Log.d("TAGG", "after mytask3 execute");
-        }
-
-    }
-
-
-    public // Adding new contact quickly (Async)
-    void addContactAsync(Signs contact) {
-
-        Global.signs_s.add(contact);
-
-        get_mytask3_running();
-
-    }
 
 
 
@@ -455,12 +426,6 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
         Log.d("TAGG","after db.insert with speed=" + Integer.toString(contact.mph));
     }
 
-    public void deleteSignAsync(Signs contact) {
-
-
-        Global.signs_d.add(contact);
-
-    }
 
     // Deleting single contact
     public void deleteSign(Signs contact) {

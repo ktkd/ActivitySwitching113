@@ -33,11 +33,6 @@ public class Global {
 
 
 
-
-	public static List<Signs> signs_s = new ArrayList<Signs>();
-
-	public static List<Signs> signs_d = new ArrayList<Signs>();
-
 	public static List<Signs> duplist= new ArrayList<Signs>();
 
 
@@ -224,7 +219,7 @@ public class Global {
 
 		public static Settings.AsyncTaskExample2 mytask2;
 
-		public static Settings.AsyncTaskExample3 mytask3;
+
 
 
 }

@@ -51,8 +51,8 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
     //private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static String DB_PATH = "/mnt/sdcard/";
-    //private static String DB_PATH= "/mnt/extSdCard/";
+    //private static String DB_PATH = "/mnt/sdcard/";
+    private static String DB_PATH= "/mnt/extSdCard/";   //SAMSUNG phone
     //private static String DB_PATH = "/data/data/org.wikispeedia.roadrage2/databases/";
 
 
@@ -371,13 +371,6 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
 
 
 
-    public // Adding new contact quickly (Async)
-    void addContactAsync(Signs contact) {
-
-        Global.signs_s.add(contact);
-
-    }
-
 
 
     public // Adding new contact
@@ -433,12 +426,7 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
-    public void deleteSignAsync(Signs contact) {
 
-
-        Global.signs_d.add(contact);
-
-    }
 
     // Deleting single contact
     public void deleteSign(Signs contact) {

@@ -28,13 +28,9 @@ public class DatabaseHandler {
 
     public void addContact(Signs contact) { db_east.addContact(contact); }
 
-    public void deleteSignAsync(Signs contact) { db_east.deleteSignAsync(contact); }
-
     public String getLastSync() { return db_east.getLastSync(); }
 
     public void onUpgrade() { db_east.onUpgrade(); }
-
-    public void addContactAsync(Signs contact) { db_east.addContactAsync(contact); }
 
     public List<Signs> getBox(Float _swlat,Float _swlon,Float _nelat,Float _nelon) {
 
@@ -63,10 +59,6 @@ public class DatabaseHandler {
     public void deleteSignWithCOG(Signs contact,int coglow_i, int coghigh_i) {
         db_east.deleteSignWithCOG(      contact,    coglow_i,     coghigh_i);
     }
-
-
-
-
 
 
 }
