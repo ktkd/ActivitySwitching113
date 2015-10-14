@@ -76,6 +76,7 @@ public class Settings extends Activity {
 	   private Spinner fromSpinner;
 	   private Spinner fromSpinner2;
 	   private Spinner fromSpinner3;
+       private Spinner fromSpinner4;
 	   
 	   private TextWatcher emailWatcher;
 	   private TextWatcher usernameWatcher;
@@ -84,7 +85,8 @@ public class Settings extends Activity {
 	   private TextWatcher rgbWatcher;
 	   private OnItemSelectedListener itemListener;
 	   private OnItemSelectedListener itemListener2;	
-	   private OnItemSelectedListener itemListener3;	
+	   private OnItemSelectedListener itemListener3;
+       private OnItemSelectedListener itemListener4;
 	   private EditText usernameText;
 	   private EditText allText;
 	   private EditText overText;
@@ -189,6 +191,7 @@ public class Settings extends Activity {
     private void findViews_settings() {
        fromSpinner = (Spinner) findViewById(R.id.mph_kph_language);
        fromSpinner3= (Spinner) findViewById(R.id.syncnow_language);
+       fromSpinner4= (Spinner) findViewById(R.id.east_west_language);
        usernameText = (EditText) findViewById(R.id.username_field);
           origText  = (EditText) findViewById(R.id.url_field);
             allText = (EditText) findViewById(R.id.all_field);
@@ -246,18 +249,43 @@ public class Settings extends Activity {
        
        fromSpinner3.setAdapter(adapter3);
       
-    	   //fromSpinner3.setSelection(1);  //1= yes sync now
-    	   fromSpinner3.setSelection(0);  //0= no
-           
-       
-       
-       
-       
-       
-       
-       
-       
-       
+    	//fromSpinner3.setSelection(1);  //1= yes sync now
+       fromSpinner3.setSelection(0);  //0= no
+
+
+
+
+
+
+        ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(
+                this, R.array.languagesssss,
+                android.R.layout.simple_spinner_item);
+
+        adapter4.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+
+        fromSpinner4.setAdapter(adapter4);
+
+        if(Global.east_west) {
+            fromSpinner4.setSelection(0);
+        } else {
+            fromSpinner4.setSelection(1);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
     
     
@@ -386,15 +414,35 @@ public class Settings extends Activity {
           public void onNothingSelected(AdapterView parent) {
           } 
        };
-         
+
+
+
+
+        itemListener4 = new OnItemSelectedListener() {
+            public void onItemSelected(AdapterView parent, View v,
+                                       int position, long id) {
+
+                if(id==0) {
+                    Global.east_west= true;
+                } else {
+                    Global.east_west= false;
+                }
+            }
+            public void onNothingSelected(AdapterView parent) {
+            }
+        };
+
+
        
        // Set listeners on graphical user interface widgets
        usernameText.addTextChangedListener(usernameWatcher);
        origText.addTextChangedListener(emailWatcher);
        fromSpinner.setOnItemSelectedListener(itemListener);
           
-       fromSpinner3.setOnItemSelectedListener(itemListener3);        
-       allText.addTextChangedListener(allWatcher);
+       fromSpinner3.setOnItemSelectedListener(itemListener3);
+       fromSpinner4.setOnItemSelectedListener(itemListener4);
+
+        allText.addTextChangedListener(allWatcher);
        overText.addTextChangedListener(overWatcher);
        rgbText.addTextChangedListener(rgbWatcher);
        

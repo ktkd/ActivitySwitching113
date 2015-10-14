@@ -3,8 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/suzuki"
-    android:orientation="horizontal"
-    android:padding="0dip" >
+	android:padding="0dip" >
 
     <LinearLayout
     	android:orientation="vertical" 
@@ -24,22 +23,23 @@
 				<Button android:textColor= "@color/yellow" android:id="@+id/about_button1"  android:text="@string/about_label1" android:textStyle="bold" android:textSize="40sp"   />
 				<Button android:textColor= "@color/fuchsia" android:id="@+id/about_button2"  android:text="@string/about_label2" android:textStyle="bold" android:textSize="40sp" />
 	    		<Button android:textColor= "@color/red" android:id="@+id/about_button3"  android:text="@string/about_label3" android:textStyle="bold" android:textSize="40sp" />
+				<Button android:textColor= "@color/green" android:id="@+id/about_button4"  android:text="@string/about_label4" android:textStyle="bold" android:textSize="40sp" />
 			</TableRow>
 			<TableRow>
-	    		<Button android:textColor= "@color/green" android:id="@+id/about_button4"  android:text="@string/about_label4" android:textStyle="bold" android:textSize="40sp" />
-	    		<Button android:textColor= "@color/gray" android:id="@+id/about_button5"  android:text="@string/about_label5" android:textStyle="bold" android:textSize="40sp" />
+	      		<Button android:textColor= "@color/gray" android:id="@+id/about_button5"  android:text="@string/about_label5" android:textStyle="bold" android:textSize="40sp" />
 	    		<Button android:textColor= "@color/olive" android:id="@+id/about_button6"  android:text="@string/about_label6" android:textStyle="bold" android:textSize="40sp" />
-	   		</TableRow>
+				<Button android:textColor= "@color/purple" android:id="@+id/about_button7"  android:text="@string/about_label7" android:textStyle="bold" android:textSize="40sp" />
+				<Button android:textColor= "@color/maroon" android:id="@+id/about_button8"  android:text="@string/about_label8" android:textStyle="bold" android:textSize="40sp" />
+			</TableRow>
     		<TableRow>
-	    		<Button android:textColor= "@color/purple" android:id="@+id/about_button7"  android:text="@string/about_label7" android:textStyle="bold" android:textSize="40sp" />
-	    		<Button android:textColor= "@color/maroon" android:id="@+id/about_button8"  android:text="@string/about_label8" android:textStyle="bold" android:textSize="40sp" />
-	    		<Button android:textColor= "@color/red" android:id="@+id/about_button9"  android:text="65T55" android:textStyle="bold" android:textSize="40sp" />
-    			</TableRow>
-	   		<TableRow>
+	    		<Button android:textColor= "@color/red" android:id="@+id/about_button9"  android:text="65" android:textStyle="bold" android:textSize="40sp" />
 	    		<Button android:textColor= "@color/green" android:id="@+id/about_button10" android:text="@string/about_label10" android:textStyle="bold" android:textSize="40sp"  />	    		
 	    		<Button android:textColor= "@color/blue" android:id="@+id/about_button11" android:text="@string/about_label11" android:textStyle="bold" android:textSize="40sp"  />
 	    		<Button android:textColor= "@color/navy" android:id="@+id/about_button12" android:text="@string/about_label12" android:textStyle="bold" android:textSize="40sp"  />
-    		</TableRow>        		
+    		</TableRow>
+			<TableRow>
+				<Button android:textColor= "@color/red" android:id="@+id/about_button13"  android:text="65T55" android:textStyle="bold" android:textSize="40sp" />
+			</TableRow>
 		</TableLayout>
 
  		

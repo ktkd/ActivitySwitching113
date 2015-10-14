@@ -44,9 +44,10 @@ public class Global {
 	public static boolean andyDelete= false;
 	public static boolean andyDoubleDeleter= true;
     public static boolean manualdelete= false;
+	public static boolean east_west= true;
 
 
-    public static String getGmtDateAsString() {
+	public static String getGmtDateAsString() {
 		Date gmt= new Date();
 		String mydate;
 		String format = "yyyy-MM-dd HH:mm:ss";

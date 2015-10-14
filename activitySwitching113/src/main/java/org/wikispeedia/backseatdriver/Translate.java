@@ -246,7 +246,6 @@ public class Translate extends Activity implements OnClickListener {
     	  contact.cog= Global.myCog;
     	  if(Global.mph_kph) {
     		  contact.mph=65;
-              contact.mph_truck= 55;
     	  } else {
     		  contact.kph= 110;
     	  }
@@ -297,7 +296,22 @@ public class Translate extends Activity implements OnClickListener {
     	  if(!andygrid) finish();
     	  
           break;
-          
+
+	  case R.id.about_button13:
+		  contact.lat= Global.myLatitude;
+		  contact.lng= Global.myLongitude;
+		  contact.cog= Global.myCog;
+		  if(Global.mph_kph) {
+			  contact.mph=65;
+			  contact.mph_truck= 55;
+		  } else {
+			  contact.kph= 110;
+		  }
+		  Global.db.addContact(contact);
+		  if(!andygrid) finish();
+
+		  break;
+
       }
       
    }
@@ -340,11 +354,12 @@ public class Translate extends Activity implements OnClickListener {
 		      ((Button) findViewById(R.id.about_button6)).setText("50");
 		      ((Button) findViewById(R.id.about_button7)).setText("55");
 		      ((Button) findViewById(R.id.about_button8)).setText("60");
-		      ((Button) findViewById(R.id.about_button9)).setText("65T55");
+		      ((Button) findViewById(R.id.about_button9)).setText("65");
 		      ((Button) findViewById(R.id.about_button10)).setText("70");
 		      ((Button) findViewById(R.id.about_button11)).setText("75");
 		      ((Button) findViewById(R.id.about_button12)).setText("80");
-	      } else {
+			  ((Button) findViewById(R.id.about_button13)).setText("65T55");
+		  } else {
 			  ((Button) findViewById(R.id.about_button1)).setText("30 Kph");
 			  ((Button) findViewById(R.id.about_button2)).setText("40 Kph");
 			  ((Button) findViewById(R.id.about_button3)).setText("50 Kph");
@@ -357,6 +372,7 @@ public class Translate extends Activity implements OnClickListener {
 			  ((Button) findViewById(R.id.about_button10)).setText("120 Kph");
 			  ((Button) findViewById(R.id.about_button11)).setText("130 Kph");
 			  ((Button) findViewById(R.id.about_button12)).setText("140 Kph");
+			  ((Button) findViewById(R.id.about_button13)).setText("110 Kph");
 		  }
 	   
 	      /*
@@ -402,8 +418,11 @@ public class Translate extends Activity implements OnClickListener {
 	      
 	      View aboutButton12 = findViewById(R.id.about_button12);
 	      aboutButton12.setOnClickListener(this);
-	      
-	   
+
+	      View aboutButton13 = findViewById(R.id.about_button13);
+	      aboutButton13.setOnClickListener(this);
+
+
 	   
 //      transText = (TextView) findViewById(R.id.translated_text);
       //retransText = (TextView) findViewById(R.id.retranslated_text);

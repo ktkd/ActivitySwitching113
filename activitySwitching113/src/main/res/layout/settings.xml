@@ -36,10 +36,17 @@
          <TextView android:text="@string/syncnow_text" />
          <Spinner android:id="@+id/syncnow_language" />
       </TableRow>
-      
-      
-      
-      <TableRow>
+
+
+
+         <TableRow>
+             <TextView android:text="East/West" />
+             <Spinner android:id="@+id/east_west_language" />
+         </TableRow>
+
+
+
+         <TableRow>
           <TextView android:text="@string/all_text" />
 	      <EditText
 	         android:id="@+id/all_field"

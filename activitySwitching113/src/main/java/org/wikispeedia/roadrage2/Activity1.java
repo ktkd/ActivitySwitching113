@@ -71,9 +71,11 @@ class AsyncTaskExample1 extends AsyncTask<Void, Integer, String>{
 	   protected String doInBackground(Void...arg0) {    
 	    Log.d("Asyntask","On doInBackground...");    
 	      publishProgress(27);    
-	      
-	      Global.dobox();
-  	    
+
+		   if(Global.db.busy) {
+		   } else {
+			   Global.dobox();
+		   }
 	      
 	      
 	     return "You are at PostExecute";
@@ -769,8 +771,7 @@ public void send(byte[] out) {
 	   	   Global.over= settings.getInt("over", 7);
 	   	   Global.dbCreated= settings.getBoolean("db", false);
 	   	   String rgbtmp= settings.getString("Rgb", "77,119,67,77,119,87");
-	   	   
-	   	   
+
 
 	       String string = rgbtmp;
 	       String[] parts = string.split(",");         
@@ -786,9 +787,9 @@ public void send(byte[] out) {
 	       } catch(Exception e) {
 	      	 Global.rgb= "77,119,67,77,119,87";			//just force it to something so we don't get exceptions all day long
 	       }
-	       
-	   	   
-	   	   
+
+		   Global.east_west = settings.getBoolean("eastwest", true);
+
   }
 
 

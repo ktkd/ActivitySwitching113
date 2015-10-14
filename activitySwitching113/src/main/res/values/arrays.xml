@@ -39,6 +39,14 @@
         <item>20 pt</item>
     </string-array>
 
+
+    <array name="languagesssss">
+        <item>east</item>
+        <item>west</item>
+    </array>
+
+
+
 	<!-- Do not localize entryvalues -->
     <string-array name="entryvalues_fontsize_preference">
         <item>0</item>

@@ -25,6 +25,7 @@ public final class R {
         public static final int languagess=0x7f07000d;
         public static final int languagesss=0x7f07000e;
         public static final int languagessss=0x7f07000f;
+        public static final int languagesssss=0x7f070010;
     }
     public static final class attr {
         /** <p>May be an integer value, such as "<code>100</code>".
@@ -121,6 +122,7 @@ containing a value of this type.
         public static final int about_button10=0x7f0c001e;
         public static final int about_button11=0x7f0c001f;
         public static final int about_button12=0x7f0c0020;
+        public static final int about_button13=0x7f0c0021;
         public static final int about_button2=0x7f0c0016;
         public static final int about_button3=0x7f0c0017;
         public static final int about_button4=0x7f0c0018;
@@ -129,8 +131,8 @@ containing a value of this type.
         public static final int about_button7=0x7f0c001b;
         public static final int about_button8=0x7f0c001c;
         public static final int about_button9=0x7f0c001d;
-        public static final int action_settings=0x7f0c002a;
-        public static final int all_field=0x7f0c0024;
+        public static final int action_settings=0x7f0c002c;
+        public static final int all_field=0x7f0c0026;
         public static final int any=0x7f0c0000;
         public static final int back=0x7f0c0001;
         public static final int btn1=0x7f0c000f;
@@ -139,30 +141,31 @@ containing a value of this type.
         public static final int btn4=0x7f0c0012;
         public static final int buttonDialog=0x7f0c0006;
         public static final int button_scan=0x7f0c000d;
-        public static final int connect=0x7f0c002b;
-        public static final int emulatorView=0x7f0c0021;
+        public static final int connect=0x7f0c002d;
+        public static final int east_west_language=0x7f0c0025;
+        public static final int emulatorView=0x7f0c0022;
         public static final int front=0x7f0c0002;
         public static final int lane_detection_java_view=0x7f0c000e;
-        public static final int menu_about=0x7f0c002f;
-        public static final int menu_special_keys=0x7f0c002d;
-        public static final int menu_start_stop_save=0x7f0c002e;
-        public static final int mph_kph_language=0x7f0c0028;
-        public static final int mytextview=0x7f0c0022;
+        public static final int menu_about=0x7f0c0031;
+        public static final int menu_special_keys=0x7f0c002f;
+        public static final int menu_start_stop_save=0x7f0c0030;
+        public static final int mph_kph_language=0x7f0c002a;
+        public static final int mytextview=0x7f0c0023;
         public static final int new_devices=0x7f0c000c;
-        public static final int over_field=0x7f0c0026;
+        public static final int over_field=0x7f0c0028;
         public static final int paired_devices=0x7f0c000a;
-        public static final int preferences=0x7f0c002c;
+        public static final int preferences=0x7f0c002e;
         public static final int pymasde_es=0x7f0c0005;
         public static final int pymasdeabout=0x7f0c0004;
-        public static final int rgb_field=0x7f0c0029;
-        public static final int syncnow_language=0x7f0c0023;
+        public static final int rgb_field=0x7f0c002b;
+        public static final int syncnow_language=0x7f0c0024;
         public static final int timer=0x7f0c0014;
         public static final int title_left_text=0x7f0c0007;
         public static final int title_new_devices=0x7f0c000b;
         public static final int title_paired_devices=0x7f0c0009;
         public static final int title_right_text=0x7f0c0008;
-        public static final int url_field=0x7f0c0027;
-        public static final int username_field=0x7f0c0025;
+        public static final int url_field=0x7f0c0029;
+        public static final int username_field=0x7f0c0027;
     }
     public static final class layout {
         public static final int about=0x7f030000;

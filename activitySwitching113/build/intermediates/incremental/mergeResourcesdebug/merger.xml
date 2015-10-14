@@ -12,7 +12,10 @@
     </string-array><array name="languages">
       <item>Mph</item>
       <item>Kph</item>
-   </array><string-array name="entryvalues_screenorientation_preference">
+   </array><array name="languagesssss">
+        <item>east</item>
+        <item>west</item>
+    </array><string-array name="entryvalues_screenorientation_preference">
 	  <item>0</item>
 	  <item>1</item>
 	  <item>2</item>

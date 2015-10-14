@@ -428,7 +428,7 @@ void copyFile(File src, File dst) throws IOException {
         editor.putString("all", Global.all);
         editor.putInt("over", Global.over);
         editor.putBoolean("db", Global.dbCreated);
-       
+        editor.putBoolean("eastwest", Global.east_west);
         
         
         

@@ -19,7 +19,7 @@
         jar="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/build/intermediates/exploded-aar/ActivitySwitching113/openCVLibrary249/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="c54aac494a87fcf2b9240504d8611908dc5cd0c1">
+        sha1="0e943e98d31775473d95d4a157d3fe2272aedd6f">
         <dex dex="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/build/intermediates/pre-dexed/debug/classes-05c20f7fa39496d4eba9efe9bcec2875cadc5130.jar" />
     </item>
 
