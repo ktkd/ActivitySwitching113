@@ -267,8 +267,7 @@ public class Activity1 extends Activity {
     	
     	if(Global.test) {
 
-
-
+			
 
 			Signs sign= new Signs();
 			sign.mph=65;
