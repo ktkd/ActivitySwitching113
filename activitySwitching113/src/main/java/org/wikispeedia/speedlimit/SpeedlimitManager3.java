@@ -63,7 +63,7 @@ public class SpeedlimitManager3 {
 	  static String deletedOn;
 	  static String dutc;
 	  static ArrayList<Signs> signs = new ArrayList<Signs>();
-	  static int pegMph, pegKph;
+	  static int pegMph, pegKph, pegMph_truck;
 	  static double pegLatitude; 	
 	  static double pegLongitude;
 	  static Float pegCog;
@@ -566,12 +566,14 @@ public class SpeedlimitManager3 {
 	public static  void doSomethingExpensive_submit2() throws UnsupportedEncodingException {  
       {			
 	   	   final int  myDummy= 69;   //goofy necessary flag that wikispeedia uses
-	       String speed;
+	       String speed, speed_truck;
 	        
 	       if(Global.mph_kph) {
-	    	   speed= Integer.toString(pegMph);               
+	    	   speed= Integer.toString(pegMph);
+			   speed_truck= Integer.toString(pegMph_truck);
 	       } else {
 	    	   speed= Integer.toString(pegKph);
+			   speed_truck= "0";	//TODO
 	       }     	 
        	 
            String latString = Double.toString(pegLatitude);
@@ -580,14 +582,16 @@ public class SpeedlimitManager3 {
            String dummy=      Integer.toString(myDummy);
        	   String direction=  Float.toString(pegCog);
        	   String hours=      "";
-  	       String mmmphval,mmkphval;
+  	       String mmmphval,mmkphval, mmmph_truckval;
   	    	   	     
            if(Global.mph_kph == true) {
-           	mmmphval= speed;
-           	mmkphval=dummy;
+           		mmmphval= speed;
+			   	mmmph_truckval= speed_truck;
+           		mmkphval=dummy;
            } else {
-           	mmmphval= dummy;
-           	mmkphval=speed;
+           		mmmphval= dummy;
+           		mmkphval=speed;
+			   	mmmph_truckval= ""; //TODO
            }
       
 	           
@@ -606,7 +610,8 @@ public class SpeedlimitManager3 {
 						"&mcog=" + direction +
 						"&mhours=" + "" +
 						"&memail=" + pegEmail +
-						"&msutc="   + URLEncoder.encode(pegsutc, "UTF-8"));
+						"&msutc="   + URLEncoder.encode(pegsutc, "UTF-8") +
+			            "&mmph_truck=" + mmmph_truckval);
   			} catch (MalformedURLException e) {
   				e.printStackTrace();
   			} catch (UnsupportedEncodingException e) {
@@ -744,7 +749,8 @@ public class SpeedlimitManager3 {
 				pegCog= (float) sign.cog;
 				pegAltitude_meters= sign.altitude_meters;
 				markedforspeedydeletion= sign.markedforspeedydeletion;
-				
+				pegMph_truck= sign.mph_truck;
+
 				if(sign.sutc!=null) {
 					pegsutc= sign.sutc;
 				} else {
