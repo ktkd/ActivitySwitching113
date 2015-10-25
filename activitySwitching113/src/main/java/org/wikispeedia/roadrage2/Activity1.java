@@ -267,7 +267,7 @@ public class Activity1 extends Activity {
     	
     	if(Global.test) {
 
-			
+
 
 			Signs sign= new Signs();
 			sign.mph=65;
@@ -306,13 +306,15 @@ public class Activity1 extends Activity {
 
         TimerTask mmTimerTask = new TimerTask() {
             public void run() {
-           	 
-               
-            	 mmTimer.cancel();
-         
-                 //Intent act3 = new Intent(mycontext,Translate.class);
-                 //startActivity(act3);
-            	
+
+				mmTimer.cancel();
+
+
+				Global.andyDelete=true;
+				Global.andygrid = false;
+				Intent act4 = new Intent(mycontext,Canvastutorial.class);
+				startActivity(act4);
+
             }
         };
          

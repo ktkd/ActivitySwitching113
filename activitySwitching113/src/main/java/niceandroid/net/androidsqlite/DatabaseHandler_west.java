@@ -51,8 +51,8 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
     //private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    //private static String DB_PATH = "/mnt/sdcard/";
-    private static String DB_PATH= "/mnt/extSdCard/";   //SAMSUNG phone
+    private static String DB_PATH = "/mnt/sdcard/";       //Kyocera phone
+    //private static String DB_PATH= "/mnt/extSdCard/";   //SAMSUNG phone
     //private static String DB_PATH = "/data/data/org.wikispeedia.roadrage2/databases/";
 
 

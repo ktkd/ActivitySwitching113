@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/build/intermediates/exploded-aar/ActivitySwitching113/openCVLibrary249/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="f43df17db571c37c8bf4f4ce5965d3d3f4478b07">
-        <dex dex="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/build/intermediates/pre-dexed/debug/classes-05c20f7fa39496d4eba9efe9bcec2875cadc5130.jar" />
-    </item>
-    <item
         jar="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/libs/android-support-v4.jar"
         jumboMode="false"
         revision="23.0.0"
@@ -21,6 +14,13 @@
         revision="23.0.0"
         sha1="d7072ec248612a8f861f895a950eb7cc480de9c0">
         <dex dex="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/build/intermediates/pre-dexed/debug/sjxp-2.2-7c60df9fc2dbd39ae88a7a97dc38987a3b59f293.jar" />
+    </item>
+    <item
+        jar="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/build/intermediates/exploded-aar/ActivitySwitching113/openCVLibrary249/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e925ff08f017258091a43a541f58bfa1ae7b06f4">
+        <dex dex="/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/build/intermediates/pre-dexed/debug/classes-05c20f7fa39496d4eba9efe9bcec2875cadc5130.jar" />
     </item>
 
 </items>
