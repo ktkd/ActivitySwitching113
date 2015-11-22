@@ -791,6 +791,8 @@ public void send(byte[] out) {
 
 		   Global.east_west = settings.getBoolean("eastwest", true);
 
+	       Global.sdlocation= settings.getInt("sdcard",0);
+
   }
 
 

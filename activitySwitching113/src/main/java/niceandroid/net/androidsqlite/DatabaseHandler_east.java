@@ -31,7 +31,6 @@ package niceandroid.net.androidsqlite;
         import android.database.sqlite.SQLiteDatabase;
         import android.database.sqlite.SQLiteException;
         import android.database.sqlite.SQLiteOpenHelper;
-        import android.os.AsyncTask;
         import android.text.format.DateFormat;
         import android.util.Log;
 
@@ -50,7 +49,8 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
     //private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static String DB_PATH = "/mnt/sdcard/";       //Kyocera phone
+    private String DB_PATH;
+    //private static String DB_PATH = "/mnt/sdcard/";       //Kyocera phone
     //private static String DB_PATH= "/mnt/extSdCard/";   //SAMSUNG phone
     //private static String DB_PATH = "/data/data/org.wikispeedia.roadrage2/databases/";
 
@@ -97,11 +97,11 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
      * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
      * @param context
      */
-    public DatabaseHandler_east(Context context) {
-        super(context, DB_PATH + DB_NAME, null, DATABASE_VERSION);
+    public DatabaseHandler_east(Context context, String DB_PATHH) {
+        super(context, DB_PATHH + DB_NAME, null, DATABASE_VERSION);
         this.myContext = context;
-        //DB_PATH = "/data/data/"+ context.getApplicationContext().getPackageName()+ "/databases/";
-        //DB_PATH = "/mnt/sdcard/";
+        DB_PATH= DB_PATHH;
+
         try {
             createDataBase();
         } catch (IOException e) {
@@ -157,11 +157,11 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
     }
 
 
-    public static synchronized DatabaseHandler_east getDBAdapterInstance(Context context)
+    public static synchronized DatabaseHandler_east getDBAdapterInstance(Context context, String DB_PATHH)
     {
         if (mDBConnection == null)
         {
-            mDBConnection = new DatabaseHandler_east(context);
+            mDBConnection = new DatabaseHandler_east(context, DB_PATHH);
         }
         return mDBConnection;
     }
@@ -421,10 +421,8 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
         //Inserting Row
         db.insert(TABLE_CONTACTS, null, values);
         db.close(); // Closing database connection
-
-
-        Log.d("TAGG","after db.insert with speed=" + Integer.toString(contact.mph));
     }
+
 
 
     // Deleting single contact
@@ -463,9 +461,6 @@ public class DatabaseHandler_east extends SQLiteOpenHelper {
 
 
         db.close();
-
-        Log.d("TAGG","after deleting db.close with mph=" + Integer.toString(contact.mph));
-
     }
 
 

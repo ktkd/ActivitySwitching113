@@ -47,6 +47,13 @@
 
 
          <TableRow>
+             <TextView android:text="SdLocation" />
+             <Spinner android:id="@+id/sdlocation" />
+         </TableRow>
+
+
+
+         <TableRow>
           <TextView android:text="@string/all_text" />
 	      <EditText
 	         android:id="@+id/all_field"

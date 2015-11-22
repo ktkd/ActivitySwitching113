@@ -103,6 +103,11 @@
         <item>east</item>
         <item>west</item>
     </array>
+    <string-array name="languagessssss">
+        <item>sd_none</item>
+        <item>sd_Kyocera</item>
+        <item>sd_Samsung</item>
+    </string-array>
     <!-- From: file:/var/www/html/jimws15/ActivitySwitching113/activitySwitching113/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="Black">#000000</color>

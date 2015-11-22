@@ -306,7 +306,7 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	int mycog= 0;
 	
 	static int spin;
-	static int oldspin=361; //trick to force first distance denominator calculation
+	static int oldspin; //trick to force first distance denominator calculation
 	static int pthreshold,mthreshold=-2;	//trying to prevent jitter
 	
 

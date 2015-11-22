@@ -45,6 +45,7 @@ public class Global {
 	public static boolean andyDoubleDeleter= true;
     public static boolean manualdelete= false;
 	public static boolean east_west= true;
+	public static int sdlocation= 0;
 
 
 	public static String getGmtDateAsString() {

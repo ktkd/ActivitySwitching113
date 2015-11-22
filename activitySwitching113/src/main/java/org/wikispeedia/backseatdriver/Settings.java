@@ -46,6 +46,7 @@ import android.location.LocationManager;
 import org.wikispeedia.speedlimit.Box;
 import org.wikispeedia.speedlimit.Signs;
 import org.wikispeedia.speedlimit.SpeedlimitManager3;
+import org.wikispeedia.zombiepro.Canvastutorial;
 import org.wikispeedia.zombiepro.Panel;
 
 
@@ -77,6 +78,7 @@ public class Settings extends Activity {
 	   private Spinner fromSpinner2;
 	   private Spinner fromSpinner3;
        private Spinner fromSpinner4;
+       private Spinner fromSpinner5;
 	   
 	   private TextWatcher emailWatcher;
 	   private TextWatcher usernameWatcher;
@@ -87,6 +89,7 @@ public class Settings extends Activity {
 	   private OnItemSelectedListener itemListener2;	
 	   private OnItemSelectedListener itemListener3;
        private OnItemSelectedListener itemListener4;
+       private OnItemSelectedListener itemListener5;
 	   private EditText usernameText;
 	   private EditText allText;
 	   private EditText overText;
@@ -156,13 +159,50 @@ public class Settings extends Activity {
     @Override
     protected void onDestroy() {
     	super.onDestroy();
-    	
+
+        save_junk();
     }
-    
+
+
+    public void save_junk() {
+
+        // Save user preferences as persistent.
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("MphKph", Global.mph_kph);
+        editor.putBoolean("Taunts", Global.taunts);
+
+        editor.putString("Username", Global.mUsernameString);
+        editor.putString("Rgb", Global.rgb);
+        editor.putString("Email", Global.mEmailString);
+        editor.putString("all", Global.all);
+        editor.putInt("over", Global.over);
+        editor.putBoolean("db", Global.dbCreated);
+        editor.putBoolean("eastwest", Global.east_west);
+        editor.putInt("sdcard",Global.sdlocation);
+
+
+
+
+
+
+
+        // Don't forget to commit your edits!!!
+        //to see your stuff go into DDMS->File Explorer->data->data->org.wikispeedia.backseatdriver->shared_prefs
+        editor.commit();
+        //editor.apply();
+    }
+
     @Override
     protected void onStop(){
        super.onStop();
-   
+
+
+
+        save_junk();
+
+
+
        
        //multipurpose button.
        if(Global.delete_settings==true) {
@@ -192,6 +232,7 @@ public class Settings extends Activity {
        fromSpinner = (Spinner) findViewById(R.id.mph_kph_language);
        fromSpinner3= (Spinner) findViewById(R.id.syncnow_language);
        fromSpinner4= (Spinner) findViewById(R.id.east_west_language);
+       fromSpinner5= (Spinner) findViewById(R.id.sdlocation);
        usernameText = (EditText) findViewById(R.id.username_field);
           origText  = (EditText) findViewById(R.id.url_field);
             allText = (EditText) findViewById(R.id.all_field);
@@ -274,13 +315,22 @@ public class Settings extends Activity {
 
 
 
+        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(
+                this, R.array.languagessssss,
+                android.R.layout.simple_spinner_item);
 
+        adapter5.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
 
+        fromSpinner5.setAdapter(adapter5);
 
-
-
-
-
+        if(Global.sdlocation==0) {
+            fromSpinner5.setSelection(0);   //data/data/org.wikispeedia.roadrage2/databases/
+        } else if(Global.sdlocation==1) {
+            fromSpinner5.setSelection(1);   //mnt/sdcard/";       //Kyocera phone
+        } else {
+            fromSpinner5.setSelection(2);   //mnt/extSdCard/";    //SAMSUNG phone
+        }
 
 
 
@@ -433,6 +483,23 @@ public class Settings extends Activity {
         };
 
 
+        itemListener5 = new OnItemSelectedListener() {
+            public void onItemSelected(AdapterView parent, View v,
+                                       int position, long id) {
+
+                if(id==0) {
+                    Global.sdlocation= 0;
+                } else if (id==1) {
+                    Global.sdlocation= 1;
+                } else {
+                    Global.sdlocation= 2;
+                }
+            }
+            public void onNothingSelected(AdapterView parent) {
+            }
+        };
+
+
        
        // Set listeners on graphical user interface widgets
        usernameText.addTextChangedListener(usernameWatcher);
@@ -441,7 +508,7 @@ public class Settings extends Activity {
           
        fromSpinner3.setOnItemSelectedListener(itemListener3);
        fromSpinner4.setOnItemSelectedListener(itemListener4);
-
+       fromSpinner5.setOnItemSelectedListener(itemListener5);
         allText.addTextChangedListener(allWatcher);
        overText.addTextChangedListener(overWatcher);
        rgbText.addTextChangedListener(rgbWatcher);

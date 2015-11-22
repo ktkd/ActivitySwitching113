@@ -23,15 +23,47 @@ public class DatabaseHandler {
         //super(context, DB_PATH + DB_NAME_EAST, null, DATABASE_VERSION);
         this.myContext = context;
 
-        db_east = new DatabaseHandler_east(myContext);
-        db_west = new DatabaseHandler_west(myContext);
+
+
+
+
+        String sdthing= "";
+        if(Global.sdlocation == 0) {
+            sdthing=  "/data/data/org.wikispeedia.roadrage2/databases/";
+        } else if (Global.sdlocation == 1) {
+            sdthing = "/mnt/sdcard/";     //Kyocera phone
+        }  else {
+            sdthing= "/mnt/extSdCard/";   //SAMSUNG phone
+        }
+
+
+
+        db_west = new DatabaseHandler_west(myContext, sdthing);
+        db_east = new DatabaseHandler_east(myContext, sdthing);
+
+
+
+
+
 
     }
+
+    public void cklocation() {
+
+        if(Global.myLongitude<-89.55592) {
+            Global.east_west = false;
+        } else {
+            Global.east_west = true;
+        }
+
+    }
+
 
     public void addContact(Signs contact) {
         if(busy) {
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 db_east.addContact(contact);
             } else {
@@ -46,6 +78,7 @@ public class DatabaseHandler {
         if (busy) {
         } else {
             busy = true;
+            cklocation();
             if(Global.east_west) {
                 retval = db_east.getLastSync();
             } else {
@@ -61,6 +94,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 db_east.onUpgrade();
             } else {
@@ -77,6 +111,7 @@ public class DatabaseHandler {
             return null;
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 retval = db_east.getBox(_swlat, _swlon, _nelat, _nelon);
             } else {
@@ -92,6 +127,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 db_east.deleteSign(contact);
             } else {
@@ -107,6 +143,7 @@ public class DatabaseHandler {
             return null;
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 retval = db_east.getExtremes();
             } else {
@@ -123,6 +160,7 @@ public class DatabaseHandler {
             return null;
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 retval = db_east.getJourneys();
             } else {
@@ -137,6 +175,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 db_east.addJourney(contact);
             } else {
@@ -150,6 +189,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy = true;
+            cklocation();
             if(Global.east_west) {
                 db_east.setlastsync(mydate);
             } else {
@@ -163,6 +203,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy = true;
+            cklocation();
             if(Global.east_west) {
                 db_east.clearJourneys();
             } else {
@@ -177,6 +218,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 retval = db_east.getLatestDate();
             } else {
@@ -192,6 +234,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy = true;
+            cklocation();
             if(Global.east_west) {
                 retval = db_east.getAllofThemSince(thedate);
             } else {
@@ -206,6 +249,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy=true;
+            cklocation();
             if(Global.east_west) {
                 db_east.delete_dups();
             } else {
@@ -219,6 +263,7 @@ public class DatabaseHandler {
         if(busy) {
         } else {
             busy = true;
+            cklocation();
             if(Global.east_west) {
                 db_east.deleteSignWithCOG(contact, coglow_i, coghigh_i);
             } else {

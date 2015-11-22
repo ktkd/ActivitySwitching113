@@ -45,6 +45,11 @@
         <item>west</item>
     </array>
 
+    <string-array name="languagessssss">
+        <item>sd_none</item>
+        <item>sd_Kyocera</item>
+        <item>sd_Samsung</item>
+    </string-array>
 
 
 	<!-- Do not localize entryvalues -->

@@ -1,8 +1,5 @@
 package niceandroid.net.androidsqlite;
 
-
-
-
         import java.io.FileOutputStream;
         import java.io.IOException;
         import java.io.InputStream;
@@ -22,6 +19,7 @@ package niceandroid.net.androidsqlite;
         import org.wikispeedia.backseatdriver.AppPreferences;
         import org.wikispeedia.backseatdriver.Global;
         import org.wikispeedia.backseatdriver.Settings;
+
         import org.wikispeedia.speedlimit.Box;
         import org.wikispeedia.speedlimit.Signs;
 
@@ -51,7 +49,8 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
     //private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static String DB_PATH = "/mnt/sdcard/";       //Kyocera phone
+    private String DB_PATH;
+    //private static String DB_PATH = "/mnt/sdcard/";       //Kyocera phone
     //private static String DB_PATH= "/mnt/extSdCard/";   //SAMSUNG phone
     //private static String DB_PATH = "/data/data/org.wikispeedia.roadrage2/databases/";
 
@@ -100,11 +99,11 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
      * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
      * @param context
      */
-    public DatabaseHandler_west(Context context) {
-        super(context, DB_PATH + DB_NAME, null, DATABASE_VERSION);
+    public DatabaseHandler_west(Context context, String DB_PATHH) {
+        super(context, DB_PATHH + DB_NAME, null, DATABASE_VERSION);
         this.myContext = context;
-        //DB_PATH = "/data/data/"+ context.getApplicationContext().getPackageName()+ "/databases/";
-        //DB_PATH = "/mnt/sdcard/";
+        DB_PATH= DB_PATHH;
+
         try {
             createDataBase();
         } catch (IOException e) {
@@ -160,11 +159,11 @@ public class DatabaseHandler_west extends SQLiteOpenHelper {
     }
 
 
-    public static synchronized DatabaseHandler_west getDBAdapterInstance(Context context)
+    public static synchronized DatabaseHandler_west getDBAdapterInstance(Context context, String DB_PATHH)
     {
         if (mDBConnection == null)
         {
-            mDBConnection = new DatabaseHandler_west(context);
+            mDBConnection = new DatabaseHandler_west(context, DB_PATHH);
         }
         return mDBConnection;
     }

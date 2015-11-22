@@ -145,7 +145,7 @@ public class Canvastutorial extends Activity {
 	public void onBackPressed() {
 		super.onBackPressed();
 		Log.d("TAGG","do i get here");
-		save_junk();
+		//save_junk();
 		Log.d("TAGG","after save_junk");
 	}
 	
@@ -413,34 +413,7 @@ void copyFile(File src, File dst) throws IOException {
     
         
     }
-    
-    public void save_junk() {
 
-        // Save user preferences as persistent. 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean("MphKph", Global.mph_kph);
-        editor.putBoolean("Taunts", Global.taunts);
-        
-        editor.putString("Username", Global.mUsernameString);
-        editor.putString("Rgb", Global.rgb);
-        editor.putString("Email", Global.mEmailString);
-        editor.putString("all", Global.all);
-        editor.putInt("over", Global.over);
-        editor.putBoolean("db", Global.dbCreated);
-        editor.putBoolean("eastwest", Global.east_west);
-        
-        
-        
-        
-        
-       
-        
-        // Don't forget to commit your edits!!!
-        //to see your stuff go into DDMS->File Explorer->data->data->org.wikispeedia.backseatdriver->shared_prefs
-        editor.commit();      
-        //editor.apply();
-    }
     
     
 
