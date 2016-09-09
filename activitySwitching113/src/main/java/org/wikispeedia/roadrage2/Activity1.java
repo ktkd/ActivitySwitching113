@@ -645,7 +645,7 @@ public void finishDialogNoBluetooth() {
     builder.setMessage(R.string.alert_dialog_no_bt)
     .setIcon(android.R.drawable.ic_dialog_info)
     .setTitle(R.string.app_name)
-    .setCancelable( false )
+    .setCancelable( true )
     .setPositiveButton(R.string.alert_dialog_ok, new DialogInterface.OnClickListener() {
                public void onClick(DialogInterface dialog, int id) {
                    finish();            	
